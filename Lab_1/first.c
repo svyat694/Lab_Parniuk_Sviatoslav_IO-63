@@ -32,13 +32,13 @@ int main()
                     }
                     else
                     {
-                        printf("The function f2 is undefined for x\n");
+                        printf("Функція f2 не визначена для x\n");
                     }
                 }
             }
             else
             {
-                printf("The function f1 is undefined for x\n");
+                printf("Функція f1 не визначена для x\n");
             }
         }
     }
@@ -51,7 +51,7 @@ int main()
         }
         else
         {
-            printf("The function f2 is undefined for x\n");
+            printf("Функція f2 не визначена для x\n");
         }
     }
     return 0;
