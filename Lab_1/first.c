@@ -1,50 +1,58 @@
 #include <stdio.h>
-#include <windows.h> 
 
-int main() {
-   
-    SetConsoleCP(65001);
-    SetConsoleOutputCP(65001);
+int main()
+{
+    float y = 0;
+    float x = 0;
 
-    double x = 0;
-    double y = 0;
+    scanf("%f", &x);
 
-    printf("Введіть значення x: ");
-    if (scanf("%lf", &x) == 1) {
-        
-        if (x >= -49) {
-            if (x < -10) {
-              
-                y = 10 * x * x * x + (7.0 * x) / 5.0 + 2;
-                printf("y(x) = %.2lf\n", y);
-            } else {
-                if (x > 0) {
-                    if (x <= 10) {
-                       
-                        y = 10 * x * x * x + (7.0 * x) / 5.0 + 2;
-                        printf("y(x) = %.2lf\n", y);
-                    } else {
-                        if (x > 20) {
-                            
-                            y = -x + 9;
-                            printf("y(x) = %.2lf\n", y);
-                        } else {
-                           
-                            printf("Функція не визначена для x = %.2lf\n", x);
-                        }
+    if (x >= -49)
+    {
+        if (x < -10)
+        {
+            y = 10 * x * x * x + (7 * x) / 5 + 2;
+            printf("%f\n", y);
+        }
+        else
+        {
+            if (x > 0)
+            {
+                if (x <= 10)
+                {
+                    y = 10 * x * x * x + (7 * x) / 5 + 2;
+                    printf("%f\n", y);
+                }
+                else
+                {
+                    if (x > 20)
+                    {
+                        y = -x + 9;
+                        printf("%f", y);
                     }
-                } else {
-                    
-                    printf("Функція не визначена для x = %.2lf\n", x);
+                    else
+                    {
+                        printf("The function f2 is undefined for x\n");
+                    }
                 }
             }
-        } else {
-          
-            printf("Функція не визначена для x = %.2lf\n", x);
+            else
+            {
+                printf("The function f1 is undefined for x\n");
+            }
         }
-    } else {
-        printf("Помилка вводу!\n");
     }
-
-    return 0; 
+    else
+    {
+        if (x > 20)
+        {
+            y = -x + 9;
+            printf("%f", y);
+        }
+        else
+        {
+            printf("The function f2 is undefined for x\n");
+        }
+    }
+    return 0;
 }
