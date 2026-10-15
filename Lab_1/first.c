@@ -1,39 +1,49 @@
 #include <stdio.h>
+#include <windows.h> 
 
 int main() {
-    double x, y;
-    int is_defined = 0; // Прапорець: 0 - функція не визначена, 1 - визначена
+  
+    SetConsoleCP(65001);
+    SetConsoleOutputCP(65001);
 
-    printf("Enter x: ");
-    if (scanf("%lf", &x) == 1) {
-        // Перевірка умов без використання && та ||
+    float y = 0;
+    float x = 0;
+
+    printf("Введіть значення x: ");
+    if (scanf("%f", &x) == 1) {
         if (x >= -49) {
             if (x < -10) {
-                // x належить [-49, -10)
+               
                 y = 10 * x * x * x + (7.0 * x) / 5.0 + 2;
-                is_defined = 1;
-            } else if (x > 0) {
-                if (x <= 10) {
-                    // x належить (0, 10]
-                    y = 10 * x * x * x + (7.0 * x) / 5.0 + 2;
-                    is_defined = 1;
-                } else if (x > 20) {
-                    // x належить (20, +∞)
-                    y = -x + 9;
-                    is_defined = 1;
+                printf("y(x) = %.2f\n", y);
+            } else {
+                if (x > 0) {
+                    if (x <= 10) {
+                       
+                        y = 10 * x * x * x + (7.0 * x) / 5.0 + 2;
+                        printf("y(x) = %.2f\n", y);
+                    } else {
+                        if (x > 20) {
+                           
+                            y = -x + 9;
+                            printf("y(x) = %.2f\n", y);
+                        } else {
+                           
+                            printf("Функція не визначена для x = %.2f\n", x);
+                        }
+                    }
+                } else {
+                    
+                    printf("Функція не визначена для x = %.2f\n", x);
                 }
             }
-        }
-
-        // Виведення результату
-        if (is_defined == 1) {
-            printf("y(x) = %.2lf\n", y);
         } else {
-            printf("Function is not defined for x = %.2lf\n", x);
+         
+            printf("Функція не визначена для x = %.2f\n", x);
         }
     } else {
-        printf("Invalid input. Please enter a number.\n");
+        printf("Помилка вводу!\n");
     }
 
-    return 0; // Єдина точка виходу з програми
+    return 0;
 }
